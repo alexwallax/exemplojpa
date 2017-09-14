@@ -1,8 +1,11 @@
 package br.senac.rn.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+    @Entity //transforma essa classe em uma entidade.
 public class Categoria {
-    
+    @Id //diz que a chave primaria é o 'id' do 'int'.
     private int id;
     private String nome;
     private String descricao;
