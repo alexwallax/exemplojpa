@@ -16,6 +16,17 @@ public class CategoriaDAO {
     
     public void inserir(Categoria categoria){
         manager.getTransaction().begin();
-        
+        manager.persist(categoria);
+        manager.getTransaction().commit();    
+    }
+    public void excluir(Categoria categoria){
+        manager.getTransaction().begin();
+        manager.remove(categoria);
+        manager.getTransaction().commit();    
+    }
+    public void atualizar(Categoria categoria){
+        manager.getTransaction().begin();
+        manager.merge(categoria);
+        manager.getTransaction().commit();    
     }
 }
