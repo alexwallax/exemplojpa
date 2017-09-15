@@ -17,9 +17,9 @@ public class Principal {
         dao.inserir(c1);
        
        
-        //SexoDAO daoS = new SexoDAO();  
-        //CategoriaDAO dao = new CategoriaDAO();
-     //
+    //    SexoDAO daoS = new SexoDAO();  
+    //    CategoriaDAO dao = new CategoriaDAO();
+    //
     //    dao.atualizar(dao.buscarPorId(2));
     //    Sexo s1 = new Sexo();       
     //    s1.setNome("Masculino");
