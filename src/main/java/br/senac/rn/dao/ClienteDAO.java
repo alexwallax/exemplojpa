@@ -3,6 +3,7 @@ package br.senac.rn.dao;
 import br.senac.rn.model.Categoria;
 import br.senac.rn.model.Cliente;
 import br.senac.rn.model.Produto;
+import br.senac.rn.model.Sexo;
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -34,10 +35,10 @@ public class ClienteDAO {
         manager.getTransaction().commit();
     }
     public List<Cliente>buscarTodos(){
-        TypedQuery<Cliente> consulta = manager.createQuery"SELECT c FROM c", cliente.class);
+        TypedQuery<Cliente> consulta = manager.createQuery("SELECT c FROM Cliente c", Cliente.class);
         return consulta.getResultList();
     }
-    public Cliente buscaPorId(Int id){
+    public Cliente buscaPorId(int id){
         return manager.find(Cliente.class, id);
     }
 }
