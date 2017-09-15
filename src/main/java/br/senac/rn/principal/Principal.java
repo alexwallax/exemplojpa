@@ -26,6 +26,8 @@ public class Principal {
         cli.setSexo(new SexoDAO().buscarPorId(1));
         dao.inserir(cli);
         
+       
+        
 //      CategoriaDAO dao = new CategoriaDAO();
 //      Categoria c1 = new Categoria();
 //      c1.setNome("vidro");

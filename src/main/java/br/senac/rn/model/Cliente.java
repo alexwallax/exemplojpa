@@ -1,19 +1,21 @@
 package br.senac.rn.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@Entity
+@Entity(name = "tb_clientes")//transforma essa classe em uma entidade. vai se inserir no BD
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)  
     private int id;
     private String nome;
+    @Column(unique = true)//para não poder repetir o cpf
     private String cpf;
-    @ManyToOne
+    @ManyToOne// sempre quando haver um relacionamento tem que colocar
     private Sexo sexo;
 
     public Cliente() {

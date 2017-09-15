@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity //transforma essa classe em uma entidade. vai se inserir no BD
 public class Sexo {
     @Id //
     @GeneratedValue(strategy = GenerationType.AUTO)

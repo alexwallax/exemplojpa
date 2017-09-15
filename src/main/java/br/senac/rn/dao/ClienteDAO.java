@@ -23,6 +23,7 @@ public class ClienteDAO {
         manager.getTransaction().begin();
         manager.persist(cliente);
         manager.getTransaction().commit();
+        
     }
     public void excuir(Cliente cliente){
         manager.getTransaction().begin();
@@ -35,7 +36,7 @@ public class ClienteDAO {
         manager.getTransaction().commit();
     }
     public List<Cliente>buscarTodos(){
-        TypedQuery<Cliente> consulta = manager.createQuery("SELECT c FROM Cliente c", Cliente.class);
+        TypedQuery<Cliente> consulta = manager.createQuery("SELECT s FROM Cliente s", Cliente.class);
         return consulta.getResultList();
     }
     public Cliente buscaPorId(int id){

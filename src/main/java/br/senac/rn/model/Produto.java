@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@Entity(name = "tb_produtos")
+@Entity(name = "tb_produtos") //transforma essa classe em uma entidade. vai se inserir no BD
 public class Produto {    
     
     @Id

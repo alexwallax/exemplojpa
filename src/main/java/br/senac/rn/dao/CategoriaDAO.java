@@ -31,7 +31,7 @@ public class CategoriaDAO {
         manager.getTransaction().commit();    
     }
     public List<Categoria> buscarTodos(){ // esses comandos tras tudo o que tem na tabela Sexo
-        TypedQuery<Categoria> consulta = manager.createQuery("SELECT s FROM Categoria s", Categoria.class);
+        TypedQuery<Categoria> consulta = manager.createQuery("SELECT c FROM Categoria c", Categoria.class);
         return consulta.getResultList();
     }
     public Categoria buscarPorId(int id){
