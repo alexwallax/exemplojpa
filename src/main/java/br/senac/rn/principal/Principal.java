@@ -22,7 +22,7 @@ public class Principal {
         Cliente cli = new Cliente();
         ClienteDAO dao = new ClienteDAO();
         cli.setNome("João");
-        cli.setCpf(123456789);
+        cli.setCpf("0123456789");
         cli.setSexo(new SexoDAO().buscarPorId(1));
         dao.inserir(cli);
         

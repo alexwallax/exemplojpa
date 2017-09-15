@@ -12,14 +12,14 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.AUTO)  
     private int id;
     private String nome;
-    private int cpf;
+    private String cpf;
     @ManyToOne
     private Sexo sexo;
 
     public Cliente() {
     }
 
-    public Cliente(int id, String nome, int cpf, Sexo sexo) {
+    public Cliente(int id, String nome, String cpf, Sexo sexo) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -50,11 +50,11 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
