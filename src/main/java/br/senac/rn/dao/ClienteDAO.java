@@ -19,11 +19,11 @@ public class ClienteDAO {
         factory = Persistence.createEntityManagerFactory("ConexaoDB");
         manager = factory.createEntityManager();
     }
-    public void inserir(Cliente cliente){
+    public Cliente inserir(Cliente cliente){
         manager.getTransaction().begin();
         manager.persist(cliente);
         manager.getTransaction().commit();
-        
+        return cliente;
     }
     public void excuir(Cliente cliente){
         manager.getTransaction().begin();
