@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 
 @Entity(name = "tb_Venda")
@@ -12,7 +14,9 @@ public class Venda {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @ManyToOne
     private Cliente cliente;
+    @ManyToMany
     private List<Produto> produto;
     private float valor;
 
