@@ -3,6 +3,8 @@ package br.senac.rn.util;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 
 public abstract class GenericDAO<T> {
     
@@ -59,9 +61,10 @@ public abstract class GenericDAO<T> {
     }
     public List<T> selectAll(){
         EntityManager em = getEm();
-        String jpql = "SELECT t FROM T t";
-        TypedQuery<T> query = em.createQuery(jpql, getClassType());
-        return query.getResultList();
+        CriteriaBuilder builder = em.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(getClassType());
+        TypedQuery<T> typedQuery = em.createQuery(query.select(query.from(getClassType())));
+        return typedQuery.getResultList();
     }
     
 //    public T buscarPorId(int id){

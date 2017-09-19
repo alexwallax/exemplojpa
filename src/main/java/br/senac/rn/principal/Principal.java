@@ -64,7 +64,7 @@ public class Principal {
 //        cli.setSexo(new SexoDAO().buscarPorId(1));
 //        System.out.println(dao.inserir(cli));
               
-      GenericDAO T = new GenericDAO() {
+      GenericDAO x = new GenericDAO() {
           @Override
           public Class getClassType() {
               return Categoria.class;
@@ -73,7 +73,7 @@ public class Principal {
       Categoria c2 = new Categoria();
       c2.setNome("vidro");
       c2.setDescricao("copos");
-      T.insert(c2);
+      x.insert(c2);
         
   //    SexoDAO daoS = new SexoDAO();  
   //    CategoriaDAO dao = new CategoriaDAO();
