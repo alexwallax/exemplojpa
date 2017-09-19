@@ -9,6 +9,7 @@ import br.senac.rn.model.Cliente;
 import br.senac.rn.model.Produto;
 import br.senac.rn.model.Sexo;
 import br.senac.rn.model.Venda;
+import br.senac.rn.util.GenericDAO;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -20,8 +21,8 @@ public class Principal {
 
         
         
-        new SexoDAO().insert(new Sexo(0, "Masculino", 'M'));
-        System.exit(0);
+//        new CategoriaDAO().insert(new Categoria());
+//        System.exit(0);
 //        Venda venda = new Venda();
 //        
 //        venda.setCliente(new ClienteDAO().buscaPorId(1));
@@ -44,10 +45,9 @@ public class Principal {
 //        
 //        new VendaDAO().inserir(venda);
         
-       // System.out.println(new ClienteDAO().buscarPorCpf("123456"));
+//        System.out.println(new ClienteDAO().buscarPorCpf("123456"));
         
 //        System.out.println(new ClienteDAO().buscarTodos());
-        
         
 //      Produto p1 = new Produto();
 //      p1.setNome("Pastel");
@@ -63,14 +63,17 @@ public class Principal {
 //        cli.setCpf("01234567809");
 //        cli.setSexo(new SexoDAO().buscarPorId(1));
 //        System.out.println(dao.inserir(cli));
-        
-       
-        
-//      CategoriaDAO dao = new CategoriaDAO();
-//      Categoria c1 = new Categoria();
-//      c1.setNome("vidro");
-//      c1.setDescricao("copos");
-//      dao.inserir(c1);
+              
+      GenericDAO T = new GenericDAO() {
+          @Override
+          public Class getClassType() {
+              return Categoria.class;
+          }
+      };
+      Categoria c2 = new Categoria();
+      c2.setNome("vidro");
+      c2.setDescricao("copos");
+      T.insert(c2);
         
   //    SexoDAO daoS = new SexoDAO();  
   //    CategoriaDAO dao = new CategoriaDAO();
@@ -81,6 +84,6 @@ public class Principal {
   //    s1.setSigla('M');      
   //    SexoDAO dao = new SexoDAO();        
   //    dao.inserir(s1);        
-        System.exit(0);
+       // System.exit(0);
     }
 }

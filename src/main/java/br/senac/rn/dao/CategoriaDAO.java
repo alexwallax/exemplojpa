@@ -10,39 +10,18 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 public class CategoriaDAO extends GenericDAO<Categoria> {
+   
     
-//    @override
-//    public Class<Categoria> getTypeClass(){
-//        return Categoria.class;
+    @Override
+    public Class<Categoria> getClassType(){
+        return Categoria.class;
+  }
+//
+//    @Override
+//    public Class<Categoria> getClassType() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
 
 
-//    private EntityManager manager;
-//    private EntityManagerFactory factory;
-//    public CategoriaDAO(){   
-//        factory = Persistence.createEntityManagerFactory("ConexaoDB");
-//        manager = factory.createEntityManager();
-//    } 
-//    public void inserir(Categoria categoria){
-//        manager.getTransaction().begin();
-//        manager.persist(categoria);
-//        manager.getTransaction().commit();    
-//    }
-//    public void excluir(Categoria categoria){
-//        manager.getTransaction().begin();
-//        manager.remove(categoria);
-//        manager.getTransaction().commit();    
-//    }
-//    public void atualizar(Categoria categoria){
-//        manager.getTransaction().begin();
-//        manager.merge(categoria);
-//        manager.getTransaction().commit();    
-//    }
-//    public List<Categoria> buscarTodos(){ // esses comandos tras tudo o que tem na tabela Categoria
-//        TypedQuery<Categoria> consulta = manager.createQuery("SELECT c FROM Categoria c", Categoria.class);
-//        return consulta.getResultList();
-//    }
-//    public Categoria buscarPorId(int id){
-//        return manager.find(Categoria.class, id);
-//    }
+
 }

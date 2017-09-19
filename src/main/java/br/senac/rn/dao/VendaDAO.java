@@ -12,42 +12,10 @@ import javax.persistence.TypedQuery;
 public class VendaDAO extends GenericDAO<Venda> {
     
     
-//    @override
-//    public Class<Venda> getTypeClass(){
-//        return Venda.class;
-//    } 
+    @Override
+    public Class<Venda> getClassType(){
+        return Venda.class;
+    } 
 
 
-
-//    private EntityManager manager;
-//    private EntityManagerFactory factory;  
-//    
-//    public VendaDAO(){
-//        factory = Persistence.createEntityManagerFactory("ConexaoDB");
-//        manager = factory.createEntityManager();
-//    }
-//    
-//    public void inserir(Venda venda){
-//        manager.getTransaction().begin();
-//        manager.persist(venda);
-//        manager.getTransaction().commit();
-//        manager.close();
-//    }
-//    public void excluir(Venda venda){
-//        manager.getTransaction().begin();
-//        manager.remove(venda);
-//        manager.getTransaction().commit();
-//    }
-//    public void atualizar(Venda venda){
-//        manager.getTransaction().begin();
-//        manager.merge(venda);
-//        manager.getTransaction().commit();
-//    }
-//    public List<Venda>buscarTodos(){
-//        TypedQuery<Venda> consulta = manager.createQuery("SELECT v FROM Venda v", Venda.class);
-//        return consulta.getResultList();
-//    }
-//    public Venda buscaPorId(int id){
-//        return manager.find(Venda.class, id);
-//    }
 }

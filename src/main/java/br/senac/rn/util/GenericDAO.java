@@ -8,33 +8,61 @@ public abstract class GenericDAO<T> {
     
     protected EntityManager manager;
     
-//    public abstract Class<T> getClassType();
+    public abstract Class<T> getClassType();
     
     public EntityManager getEm(){
-        if(manager == null){
+        if(manager == null || !manager.isOpen()){
             manager = DataBase.getInstance().getEm();
         }
         return manager;
     } 
-    public void insert(T t){  
-        getEm().getTransaction().begin();
-        getEm().persist(t);
-        getEm().getTransaction().commit();  
+    public T insert(T t){  
+        EntityManager em = getEm();
+        try {
+        em.getTransaction().begin();
+        em.persist(t);
+        em.getTransaction().commit();  
+        
+        } catch (Exception error){
+            error.printStackTrace();
+            em.getTransaction().rollback();        
         }
-    public void excluir(T t){
-        getEm().getTransaction().begin();
-        getEm().remove(t);
-        getEm().getTransaction().commit();
+        return t;
     }
-    public void atualizar(T t){
-        getEm().getTransaction().begin();
-        getEm().merge(t);
-        getEm().getTransaction().commit();
+    public T delete(T t){
+        EntityManager em = getEm();
+        try{
+        em.getTransaction().begin();
+        em.remove(t);
+        em.getTransaction().commit();
+        }catch (Exception error){
+            error.printStackTrace();
+            em.getTransaction().rollback();    
     }
-//    public List<T> buscarTodos(){
-//        TypedQuery<T> consulta = getEm.createQuery("SELECT g FROM T c", T.class);
-//        return consulta.getResultList();
-//    }
+     return t;   
+    }    
+    public T update(T t){
+        EntityManager em = getEm();
+        try {
+        em.getTransaction().begin();
+        em.merge(t);
+        em.getTransaction().commit();
+        } catch (Exception error){
+            error.printStackTrace();
+            em.getTransaction().rollback();  
+        }
+        return t;
+    }
+    public T selectById(int id){
+        EntityManager em = getEm();
+        return em.find(getClassType(), id);
+    }
+    public List<T> selectAll(){
+        EntityManager em = getEm();
+        String jpql = "SELECT t FROM T t";
+        TypedQuery<T> query = em.createQuery(jpql, getClassType());
+        return query.getResultList();
+    }
     
 //    public T buscarPorId(int id){
 //        return getEm.find(T.class, id);

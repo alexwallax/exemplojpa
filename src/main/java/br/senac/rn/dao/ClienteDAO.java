@@ -9,6 +9,11 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 public class ClienteDAO extends GenericDAO<Cliente> {
+
+    @Override
+    public Class<Cliente> getClassType() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 
 //    @override

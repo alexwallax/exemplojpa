@@ -12,10 +12,10 @@ import javax.persistence.TypedQuery;
 public class ProdutoDAO extends GenericDAO<Produto> {
     
     
-//    @override
-//    public Class<Produto> getTypeClass(){
-//        return Produto.class;
-//    } 
+    @Override
+    public Class<Produto> getClassType(){
+        return Produto.class;
+    } 
     
 
 
