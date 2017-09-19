@@ -17,11 +17,11 @@ public class VendaDAO {
         manager = factory.createEntityManager();
     }
     
-    public Venda inserir(Venda venda){
+    public void inserir(Venda venda){
         manager.getTransaction().begin();
         manager.persist(venda);
         manager.getTransaction().commit();
-        return venda;
+        manager.close();
     }
     public void excluir(Venda venda){
         manager.getTransaction().begin();

@@ -7,10 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@Entity(name = "tb_clientes")//transforma essa classe em uma entidade. vai se inserir no BD
+@Entity//transforma essa classe em uma entidade. vai se inserir no BD
 public class Cliente {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)  
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  
     private int id;
     private String nome;
     @Column(unique = true)//para não poder repetir o cpf

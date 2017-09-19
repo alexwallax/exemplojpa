@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity //transforma essa classe em uma entidade. vai se inserir no BD
 public class Sexo {
     @Id //
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
     private char sigla;

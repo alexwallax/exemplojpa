@@ -1,5 +1,6 @@
 package br.senac.rn.model;
 
+import java.util.Calendar;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,21 +8,30 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
-@Entity(name = "tb_Venda")
+@Entity
 public class Venda {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne
     private Cliente cliente;
     @ManyToMany
     private List<Produto> produto;
+    @Temporal(TemporalType.DATE)
+    private Calendar data;
     private float valor;
 
     public Venda() {
     }
+
+    public Venda(Calendar data) {
+        this.data = data;
+    }
+    
     
     public Venda(int id, Cliente cliente, List<Produto> produto, float valor) {
         this.id = id;
@@ -37,6 +47,7 @@ public class Venda {
     public float getValor() {
         return valor;
     }
+    
     public void setValor(float valor) {
         this.valor = valor;
     }
@@ -84,5 +95,13 @@ public class Venda {
     @Override
     public String toString() {
         return "Venda{" + "id=" + id + ", cliente=" + cliente + ", produto=" + produto + ", valor=" + valor + '}';
+    }
+
+    public Calendar getData() {
+        return data;
+    }
+
+    public void setData(Calendar data) {
+        this.data = data;
     }
 }

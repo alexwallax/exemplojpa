@@ -4,6 +4,12 @@
     <persistence-unit name="ConexaoDB" transaction-type="RESOURCE_LOCAL">
     
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        
+        <class>br.senac.rn.model.Categoria</class>
+        <class>br.senac.rn.model.Cliente</class>
+        <class>br.senac.rn.model.Produto</class>
+        <class>br.senac.rn.model.Sexo</class>
+        <class>br.senac.rn.model.Venda</class>
        
         <properties>
             <property name="hibernate.connection.drive_class" value="com.mysql.jdbc.Driver"/>

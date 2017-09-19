@@ -5,10 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-    @Entity //transforma essa classe em uma entidade. vai se inserir no BD
+@Entity //transforma essa classe em uma entidade. vai se inserir no BD
 public class Categoria {
     //Identificador do PK(chave primaria), o @GeneratedValue para nao auto incrementar  
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)//diz que a chave primaria é o 'id' do 'int'.
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)//diz que a chave primaria é o 'id' do 'int'.
     private int id;
     private String nome;
     private String descricao;
