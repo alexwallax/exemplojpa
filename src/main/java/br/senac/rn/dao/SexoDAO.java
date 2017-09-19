@@ -8,7 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-public class SexoDAO extends GenericDAO<Sexo>{
+public class SexoDAO extends GenericDAO<Sexo> {
     
 //    @Override
 //    public Class<Sexo> getClassType(){

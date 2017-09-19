@@ -1,16 +1,23 @@
 package br.senac.rn.dao;
 
 import br.senac.rn.model.Cliente;
+import br.senac.rn.util.GenericDAO;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-public class ClienteDAO extend GenericDAO<Cliente> {
+public class ClienteDAO extends GenericDAO<Cliente> {
    
 
-    @override
+//    @override
+//    public Class<Cliente> getTypeClass(){
+//        return Cliente.class;
+//    } 
+    
+    
+    
 //    private EntityManager manager;
 //    private EntityManagerFactory factory;
 //
